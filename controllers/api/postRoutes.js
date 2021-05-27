@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, Comment } = require('../../models');
 
 // GET all posts
 router.get('/', (req, res) => {
   Post.findAll({
     include: [Comment]
-  }).then((post) => {
-    res.json(post)
+  }).then((postData) => {
+    res.json(postData)
   })
 });
 
@@ -17,16 +17,16 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     include: [Comment]
-  }).then((post) => {
-    res.json(post)
+  }).then((postData) => {
+    res.json(postData)
   })
 });
 
 // CREATE a new post
 router.post("/", (req, res) => {
   Post.create(req.body)
-  .then((post) => {
-    res.status(200).json(post);
+  .then((postData) => {
+    res.status(200).json(postData);
   })
   .then((postIds) => res.status(200).json(postIds))
   .catch((err) => {
@@ -54,8 +54,8 @@ router.delete('/:id', (req, res) => {
     where:{
       id:req.params.id,
     },
-  }).then((pst) => {
-    res.json(pst)
+  }).then((deletePost) => {
+    res.json(deletePost)
   });
 });
 

@@ -7,28 +7,26 @@ Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     content: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     date_created: {
       type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
+      defaultValue: DataTypes.NOW
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id',
+        key: 'id'
       },
     },
   },
@@ -37,7 +35,7 @@ Post.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post',
+    modelName: 'post'
   }
 );
 
