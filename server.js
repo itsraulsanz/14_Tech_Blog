@@ -7,7 +7,7 @@ const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const app = express();
-const PORT = process.env.PORT || 3006;
+const PORT = process.env.PORT || 3001;
 
 const hbsInstance = exphbs.create({});
 const HBS_ENGINE = "handlebars";

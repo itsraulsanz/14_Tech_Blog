@@ -1,6 +1,16 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// GET all users
+router.get('/', (req, res) => {
+  User.findAll({
+    attributes: { exclude: ['password'] },
+    order: [['name', 'ASC']],
+  }).then((productData) => {
+    res.json(productData)
+  })
+});
+
 // CREATE a new user
 router.post('/', async (req, res) => {
   try {
