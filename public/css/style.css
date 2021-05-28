@@ -85,6 +85,10 @@ nav a:hover {
   background-color: var(--light);
 }
 
+.card h1 {
+  text-transform: uppercase;
+}
+
 .card p {
   padding: 10px 0px 10px 30px;
 }
@@ -105,10 +109,11 @@ nav a:hover {
 .card header {
   color: var(--light);
   font-weight: bold;
-  text-transform: uppercase;
   margin: 0;
   background: var(--primary);
-  padding: 0.625rem;
+  padding: 0px 25px 0px 25px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-body {

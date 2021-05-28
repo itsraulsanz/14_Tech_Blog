@@ -1,0 +1,12 @@
+<div class="content">
+  <section class="card">
+    <header><h1>{{title}}</h1><h5>Posted by
+        {{user.name}},
+        {{date_created}}</h5></header>
+    <p>{{content}}</p>
+  </section>
+  {{#each comment}}
+    <p>{{comment_text}}</p>
+    <p>{{user.name}}, {{date_created}}</p>
+  {{/each}}
+</div>

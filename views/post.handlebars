@@ -1,9 +1,10 @@
 <div class="content">
     {{#each post}}
-        <section class="card" href="/post/{{id}}">
-        <h3>Post</h3>
-          <header>{{title}}</header>
-          <p>{{date_created}}</p>
+        <section class="card">
+          <a href="/post/{{id}}">
+          <header><h1>{{title}}</h1><h5>Posted by {{user.name}}, {{date_created}}</h5></header>
+          <p>{{content}}</p>
+          </a>
         </section>
     {{/each}}
 </div>
