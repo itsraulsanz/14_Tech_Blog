@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Post, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // GET all posts
 router.get('/', (req, res) => {
@@ -23,16 +24,17 @@ router.get('/:id', (req, res) => {
 });
 
 // CREATE a new post
-router.post("/", (req, res) => {
-  Post.create(req.body)
-  .then((postData) => {
-    res.status(200).json(postData);
-  })
-  .then((postIds) => res.status(200).json(postIds))
-  .catch((err) => {
-    console.log(err);
+router.post('/', withAuth, async (req, res) => {
+  try {
+    const newPost = await Post.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newPost);
+  } catch (err) {
     res.status(400).json(err);
-  });
+  }
 });
 
 // UPDATE a post
