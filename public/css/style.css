@@ -19,6 +19,10 @@ body {
   background-color: var(--quatrinary);
 }
 
+h2 {
+  text-align: center;
+}
+
 a {
   color: var(--dark);
   text-decoration: none;
@@ -93,6 +97,24 @@ nav a:hover {
   padding: 10px 0px 10px 30px;
 }
 
+.card form {
+  padding: 10px 0px 10px 30px;
+}
+
+.card div {
+  padding: 10px 0px 10px 0px;
+}
+
+.card form input {
+  width: 50%;
+  height: 30px;
+}
+
+.card form textarea {
+  width: 50%;
+  height: 150px;
+}
+
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
@@ -122,15 +144,39 @@ nav a:hover {
   font-weight: bold;
 }
 
-.gallery-name {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 5px var(--secondary);
-  border: 10px groove var(--light);
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-right: 100px;
-  padding-left: 100px;
+.posts-list {
+  text-align: center;
+}
+
+/* FORMS */
+
+.post-form {
+  align-self: center;
+}
+
+.access-content {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+  align-items: flex-start;
+	align-content: stretch;
+}
+
+.login div {
+  padding: 7px 0px 7px 0px;
+}
+
+.login h2 {
+  text-align: left;
+}
+
+.signup div {
+  padding: 7px 0px 7px 0px;
+}
+
+.signup h2 {
+  text-align: left;
 }
 
 /* LAYOUT */
