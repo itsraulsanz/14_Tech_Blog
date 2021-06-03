@@ -4,7 +4,7 @@ const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, async (req, res) => {
   try {
-    const rawUserPosts = await Post.findAll({
+    const userPostsData = await Post.findAll({
       where: {
         user_id: req.session.user_id,
       },
@@ -17,13 +17,13 @@ router.get("/", withAuth, async (req, res) => {
         },
       ],
     });
-    const userPosts = rawUserPosts.map((post) => post.get({ plain: true }));
+    const userPosts = userPostsData.map((post) => post.get({ plain: true }));
     res.render("dashboard", {
       userPosts,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
 
@@ -32,7 +32,7 @@ router.get("/new", withAuth, async (req, res) => {
 });
 
 router.get("/edit/:id", async (req, res) => {
-  const rawPost = await Post.findOne({
+  const postData = await Post.findOne({
     where: {
       id: req.params.id,
     },
@@ -47,7 +47,7 @@ router.get("/edit/:id", async (req, res) => {
       },
     ],
   });
-  const post = rawPost.get({ plain: true });
+  const post = postData.get({ plain: true });
   console.log(post);
   res.render("editPost", {
     ...post,

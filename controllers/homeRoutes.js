@@ -11,6 +11,9 @@ router.get("/", async (req, res) => {
           model: User,
           attributes: ["name"],
         },
+        {
+          model: Comment,
+        },
       ],
     });
     // Serialize data so the template can read it
@@ -18,7 +21,7 @@ router.get("/", async (req, res) => {
     // Pass serialized data and session flag into template
     res.render("post", {post, logged_in: req.session.logged_in});
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
 
@@ -40,7 +43,7 @@ router.get("/post/:id", async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
 
@@ -60,7 +63,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
 

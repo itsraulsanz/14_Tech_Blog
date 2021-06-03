@@ -3,10 +3,31 @@
     <header><h1>{{title}}</h1><h5>Posted by
         {{user.name}},
         {{date_created}}</h5></header>
-    <p>{{content}}</p>
-  </section>
-  {{#each comment}}
-    <p>{{comment_text}}</p>
-    <p>{{user.name}}, {{date_created}}</p>
+    <p>{{content}}</p>  
+    {{#each comment}}
+  <div>
+    <p> {{comment_text}} </p>
+    <p>Posted by {{user.name}}, {{date_created}}</p>
+  </div>
   {{/each}}
+  </section>
+
+
+
+  {{#if logged_in}}
+  <form id="new-comment-form">
+    <div>
+        <label for="comment-text">Your comment:</label>
+        <input class="input" type="text" id="comment-text" />
+    </div>
+  <div class="control">
+    <button type="submit" class="button is-link">Submit</button>
+  </div>
+</form>
+{{/if}}
+
+
+{{#if logged_in}}
+<script src="/js/comments.js"></script>
+{{/if}}
 </div>
