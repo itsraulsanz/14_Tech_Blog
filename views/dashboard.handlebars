@@ -28,34 +28,24 @@
       </form>
   </section>
 
-    {{!-- {{#if posts.length}} --}}
-      <div class="posts-list" id="posts-list">
-        <h3>Current Posts:</h3>
+      {{#if posts.length}}
+        <div class="posts-list">
+          <h3>Current Posts:</h3>
 
-        {{#each userPosts as |post| }}
-          
-          <div class="card post-info" data-id="{{id}}">
-          <h3><a class="link" href="/post/{{id}}">{{title}}</a></h3>
-          <p>posted by: {{user.name}} on: {{format_time createdAt}}</p>
-          </div>
+          {{#each posts as |post|}}
+            <section class="card">
+              <a href="/post/{{id}}">
+              <header><h1>{{title}}</h1><h5>{{date_created}}</h5></header>
+              <p>{{content}}</p>
+              </a>              
+              <div>
+                <button class="btn-danger" data-id="{{post.id}}">DELETE</button>
+              </div>
+            </section>
+          {{/each}}
+        </div>
+      {{/if}}
 
-          <div>
-            <div>
-              <h4><a href="/post/{{id}}">{{post.name}}</a></h4>
-            </div>
-            <div class="col-md-4">
-              <button
-                class="btn btn-sm btn-danger"
-                data-id="{{post.id}}"
-              >DELETE</button>
-            </div>
-          </div>
-
-        {{/each}}
-
-
-      </div>
-    {{!-- {{/if}} --}}
   </div>
 </div>
 
