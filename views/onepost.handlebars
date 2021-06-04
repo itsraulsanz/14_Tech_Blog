@@ -4,10 +4,15 @@
         {{user.name}},
         {{date_created}}</h5></header>
     <p>{{content}}</p>  
-    {{#each comment}}
-  <div>
-    <p> {{comment_text}} </p>
-    <p>Posted by {{user.name}}, {{date_created}}</p>
+    {{#each comments}}
+  <div class="comments">
+    <h2>Comments:</h2>
+    <div class="comment-wrapper">
+    <div class="single-comment">
+      <p>{{comment_text}}</p>
+      <h5>Posted by {{user.name}}, {{date_created}}</h5>
+    </div>
+    </div>
   </div>
   {{/each}}
   </section>

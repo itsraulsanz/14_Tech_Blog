@@ -79,6 +79,35 @@ nav a:hover {
   margin-left: 16px;
 }
 
+.comments {
+  padding: 10px 0px 10px 30px !important;
+  text-align: left;
+}
+
+.comments h2 {
+  text-align: left;
+}
+
+.comments h5 {
+  margin: 0;
+}
+
+.comments p {
+  padding: 0 !important;
+  margin: 0 0 10px 0px;
+}
+
+.comment-wrapper {
+  padding: 0 0 15px 0 !important;
+}
+
+.single-comment {
+  border-left: solid black 1px;
+  padding: 10px 0px 10px 20px !important;
+}
+
+
+
 /* CARDS */
 .card {
   margin: 20px;

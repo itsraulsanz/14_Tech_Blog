@@ -30,6 +30,10 @@ router.get("/post/:id", async (req, res) => {
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
+          model: Comment,
+          include: [User],
+        },
+        {
           model: User,
           attributes: ["name"],
         },
@@ -37,6 +41,7 @@ router.get("/post/:id", async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
+    console.log(post.comments);
 
     res.render("onepost", {
       ...post,
