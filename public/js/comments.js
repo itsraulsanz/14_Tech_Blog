@@ -3,11 +3,12 @@ const newCommentFormHandler = async (event) => {
     const post_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
       ];
-    const body = document.querySelector('#comment-text').value.trim();
+    const comment_text = document.querySelector('#comment-text').value.trim();
+    console.log(comment_text, post_id);
     const response = await fetch('/api/comments', {
         method: 'POST',
         body: JSON.stringify({ 
-            body, 
+            comment_text, 
             post_id 
         }),
         headers: {

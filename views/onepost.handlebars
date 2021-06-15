@@ -3,36 +3,35 @@
     <header><h1>{{title}}</h1><h5>Posted by
         {{user.name}},
         {{date_created}}</h5></header>
-    <p>{{content}}</p>  
-    {{#each comments}}
-  <div class="comments">
+    <p>{{content}}</p>        
+    
+    {{#if comments}}
     <h2>Comments:</h2>
-    <div class="comment-wrapper">
-    <div class="single-comment">
-      <p>{{comment_text}}</p>
-      <h5>Posted by {{user.name}}, {{date_created}}</h5>
-    </div>
-    </div>
-  </div>
-  {{/each}}
+    {{/if}}
+    {{#each comments as |comment|}}
+      <div class="comments">
+
+        <div class="comment-wrapper">
+          <div class="single-comment">
+            <p>{{comment_text}}</p>
+            <h5>Posted by {{user.name}}, {{date_created}}</h5>
+          </div>
+        </div>
+      </div>
+    {{/each}}
   </section>
 
-
-
   {{#if logged_in}}
-  <form id="new-comment-form">
-    <div>
+    <form id="new-comment-form">
+      <div>
         <label for="comment-text">Your comment:</label>
         <input class="input" type="text" id="comment-text" />
-    </div>
-  <div class="control">
-    <button type="submit" class="button is-link">Submit</button>
-  </div>
-</form>
-{{/if}}
-
-
-{{#if logged_in}}
-<script src="/js/comments.js"></script>
-{{/if}}
+      </div>
+      <div class="control">
+        <button type="submit" class="button is-link">Submit</button>
+      </div>
+    </form>
+  {{/if}}
 </div>
+
+<script src="/js/comments.js"></script>
