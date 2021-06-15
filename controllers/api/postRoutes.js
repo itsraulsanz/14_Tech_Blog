@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const router = require('express').Router();
 const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
@@ -8,8 +8,10 @@ router.post("/", withAuth, async (req, res) => {
     const newPostData = await Post.create({
       title: req.body.title,
       content: req.body.content,
+      user_id: req.session.user_id,
     });
     res.status(200).json(newPostData);
+    console.log(newPostData);
   } catch (err) {
     res.status(400).json(err);
   }

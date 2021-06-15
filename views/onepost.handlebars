@@ -3,10 +3,17 @@
     <header><h1>{{title}}</h1><h5>Posted by
         {{user.name}},
         {{date_created}}</h5></header>
-    <p>{{content}}</p>        
-    
+    <p>{{content}}</p>
+    <div>
+      <button
+        class="button btn-delete"
+        id="btn-delete"
+        data-id="{{post.id}}"
+      >DELETE</button>
+    </div>
+
     {{#if comments}}
-    <h2>Comments:</h2>
+      <h2>Comments:</h2>
     {{/if}}
     {{#each comments as |comment|}}
       <div class="comments">
