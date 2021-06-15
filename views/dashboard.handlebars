@@ -28,11 +28,12 @@
       </form>
   </section>
 
-      {{#if posts.length}}
+      {{#if posts}}
         <div class="posts-list">
           <h3>Current Posts:</h3>
-
-          {{#each posts as |post|}}
+      {{/if}}
+      
+      {{#each posts as |post|}}
             <section class="card">
               <a href="/post/{{id}}">
               <header><h1>{{title}}</h1><h5>{{date_created}}</h5></header>
@@ -44,7 +45,9 @@
             </section>
           {{/each}}
         </div>
-      {{/if}}
+
 
   </div>
 </div>
+
+<script src="./js/profile.js"></script>
