@@ -106,7 +106,18 @@ nav a:hover {
   padding: 10px 0px 10px 20px !important;
 }
 
+.comment-form {
+  text-align: center;
+}
 
+/* .comment-input {
+  height: 15%;
+  width: 40%;
+} */
+
+.text-area {
+  padding: 15px;
+}
 
 /* CARDS */
 .card {
@@ -186,11 +197,11 @@ nav a:hover {
 
 .access-content {
   display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: flex-start;
-	align-content: stretch;
+  align-content: stretch;
 }
 
 .login div {

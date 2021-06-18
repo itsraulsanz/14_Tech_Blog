@@ -1,4 +1,4 @@
-const router = require('express').Router();
+const router = require("express").Router();
 const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
@@ -19,19 +19,20 @@ router.post("/", withAuth, async (req, res) => {
 
 // UPDATE a post
 router.put("/:id", withAuth, async (req, res) => {
+  console.log("Body coming into put req", req.body);
   try {
-    const editData = await Post.update(
+    const editPost = await Post.update(
       {
         title: req.body.title,
         content: req.body.content,
       },
       {
         where: {
-          id: req.params.id
-        }
-      },
+          id: req.params.id,
+        },
+      }
     );
-    res.status(200).json(editData);
+    res.status(200).json(editPost);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -39,14 +40,13 @@ router.put("/:id", withAuth, async (req, res) => {
 
 // DELETE a post
 router.delete("/:id", async (req, res) => {
+  console.log("deleteData");
   try {
-    const deleteData = await Post.destroy(
-      {
-        where: {
-          id: req.params.id
-        }
+    const deleteData = await Post.destroy({
+      where: {
+        id: req.params.id,
       },
-    );
+    });
     res.status(200).json(deleteData);
   } catch (err) {
     res.status(400).json(err);

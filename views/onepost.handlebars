@@ -5,16 +5,15 @@
         {{date_created}}</h5></header>
     <p>{{content}}</p>
     <div>
-      <button
-        class="button btn-delete"
-        id="btn-delete"
-        data-id="{{post.id}}"
-      >DELETE</button>
     </div>
 
-    {{#if comments}}
-      <h2>Comments:</h2>
-    {{/if}}
+    
+  </section>
+  
+  {{#if comments}}
+    <section class="card">
+      <header><h5>Comments:</h5></header>
+      
     {{#each comments as |comment|}}
       <div class="comments">
 
@@ -26,13 +25,14 @@
         </div>
       </div>
     {{/each}}
-  </section>
+    </section>
+ {{/if}}
 
   {{#if logged_in}}
-    <form id="new-comment-form">
-      <div>
-        <label for="comment-text">Your comment:</label>
-        <input class="input" type="text" id="comment-text" />
+    <form class="comment-form" id="new-comment-form">
+              <label for="comment-text">Your comment:</label>
+<div class="text-area">
+        <textarea class="input comment-input" type="text" id="comment-text" rows="5" cols="40" />Write something here</textarea>
       </div>
       <div class="control">
         <button type="submit" class="button is-link">Submit</button>

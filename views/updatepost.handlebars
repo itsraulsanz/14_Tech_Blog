@@ -1,0 +1,29 @@
+<div class="content">
+  <section class="card">
+      <header><h1>Update your post:</h1></header>
+
+        <form class="form edit-post-form">
+                  <label for="post-title">New Post Title:</label>
+        <div>
+          <input
+            class="form-input"
+            type="text"
+            id="post-title"
+            name="post-title"
+          />
+        </div>          
+        <label for="post-cont">New Content:</label>
+        <div class="form-group">
+          <textarea
+            class="form-input"
+            id="post-cont"
+            name="post-cont"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" value="{{id}}">Update Post</button>
+        </div>
+      </form>
+  </section>
+
+<script src="/js/updatePost.js"></script>

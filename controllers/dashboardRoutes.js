@@ -31,7 +31,7 @@ router.get("/new", withAuth, async (req, res) => {
   res.render("newPost");
 });
 
-router.get("/edit/:id", async (req, res) => {
+router.get("/edit/:id", withAuth, async (req, res) => {
   const postData = await Post.findOne({
     where: {
       id: req.params.id,
@@ -48,8 +48,8 @@ router.get("/edit/:id", async (req, res) => {
     ],
   });
   const post = postData.get({ plain: true });
-  console.log(post);
-  res.render("editPost", {
+  console.log("post being rendered", post);
+  res.render("updatePost", {
     ...post,
     logged_in: req.session.logged_in,
   });

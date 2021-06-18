@@ -35,12 +35,14 @@
       
       {{#each posts as |post|}}
             <section class="card">
+              <input type="hidden" name="post-id" value="{{post.id}}"
               <a href="/post/{{id}}">
               <header><h1>{{title}}</h1><h5>{{date_created}}</h5></header>
               <p>{{content}}</p>
               </a>              
               <div>
-                <button class="button btn-delete" id="btn-delete" data-id="{{post.id}}">DELETE</button>
+                <button class="button btn-update" id="btn-update" value="{{post.id}}">UPDATE</button>
+                <button class="button btn-delete" id="btn-delete" value="{{post.id}}">DELETE</button>
               </div>
             </section>
           {{/each}}
