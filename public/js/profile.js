@@ -33,7 +33,6 @@ const deletePostHandler = async (event) => {
   const id = event.target.value;
   const response = await fetch(`/api/posts/${id}`, {
     method: "DELETE",
-    // headers: { "Content-Type:": "application/json" },
   });
   if (response.ok) {
     document.location.replace("/dashboard");
@@ -52,10 +51,10 @@ const updatePostHandler = async (event) => {
   event.preventDefault();
 
   //get the post title and the text
-  const title = document.querySelector("#post-title").value.trim();
-  const content = document.querySelector("#post-cont").value.trim();
+  // const title = document.querySelector("#post-title").value.trim();
+  // const content = document.querySelector("#post-cont").value.trim();
   const postId = event.target.value;
-  console.log(title, content);
+  // console.log(title, content);
   document.location.replace("/edit/" + postId);
 };
 
