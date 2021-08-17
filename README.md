@@ -2,7 +2,7 @@
 
 ## Deployed Application
 
-  Website URL: <a href="https://raul-tech-blog.herokuapp.com/">https://raul-tech-blog.herokuapp.com/</a>
+<a href="https://raul-tech-blog.herokuapp.com/">https://raul-tech-blog.herokuapp.com/</a>
 
 ## Table of contents
 
