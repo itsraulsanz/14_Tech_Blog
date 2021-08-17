@@ -1,10 +1,13 @@
 # Tech Blog
 
+## Deployed Application
+
+  Website URL: <a href="https://raul-tech-blog.herokuapp.com/">https://raul-tech-blog.herokuapp.com/</a>
+
 ## Table of contents
 
 - [Description](#description)
 - [Mock-Up](#mock-up)
-- [Deployed Application](#deployed-application)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
@@ -21,10 +24,6 @@ This repository contains a CMS-style blog site where users can publish their blo
 The following animation demonstrates the application functionality:
 
 ![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./assets/blog.gif) 
-
-## Deployed Application
-
-  Website URL: <a href="https://raul-tech-blog.herokuapp.com/">https://raul-tech-blog.herokuapp.com/</a>
 
 ## Installation
 
